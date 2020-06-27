@@ -25,21 +25,23 @@ const Game = () => {
 
 	}
 
-	const renderMoves = () => {
-		
+	const style = {
+		textAlign: "center",
+		padding: "5px"
 	}
 
 	return (
 		<>
 			<Board onClick = {handleClick} squares = {board}/>
-			<div>
-			    <p>
-			      {winner ? "Winner: " + winner : "Next Player: " + (xIsNext ? "X" : "O")}
-			    </p>
-			    <button onClick = {() => setBoard(Array(9).fill(null))}>
-			Start Game
-		</button>
-		  	</div>
+		
+			<p style = {style}>
+		      	{winner ? "Winner: " + winner : "Next Player: " + (xIsNext ? "X" : "O")}
+		    </p>
+			<div style = {style}>
+				<button style = {style} onClick = {() => setBoard(Array(9).fill(null))}>
+					Start Game
+			    </button>
+			</div>
 		</>
 	)
 }
