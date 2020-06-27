@@ -1,12 +1,12 @@
 import React from 'react';
 
 const style = {
-	background: "lightblue",
-	border: "4px solid darkblue",
-	fontSize: "30px",
-	fontWeight: '800',
-	cursor: 'pointer',
-	outline: 'none'
+	background: 'lightblue',
+    border: '3px solid red',
+    fontSize: '30px',
+    fontWeight: '800',
+    cursor: 'pointer',
+    outline: 'none'
 }
 
 
