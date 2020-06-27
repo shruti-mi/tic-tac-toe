@@ -2,7 +2,7 @@ import React from 'react';
 
 const style = {
 	background: 'lightblue',
-    border: '3px solid red',
+    border: '3px solid blue',
     fontSize: '30px',
     fontWeight: '800',
     cursor: 'pointer',
