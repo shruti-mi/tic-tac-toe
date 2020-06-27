@@ -5,9 +5,8 @@ import Board from './Board';
 const Game = () => {
 
 	const [board, setBoard] = useState(Array(9).fill(null));
-	const [xIsNest, setXisNext] = useState(true);
+	const [xIsNext, setXisNext] = useState(true);
 	const winner = calculateWinner(board);
-
 
 	const handleClick = (i) => {
 		const localboard = [...board];
@@ -15,10 +14,10 @@ const Game = () => {
 		if(winner || localboard[i])
 			return;	// already win or clicked
 
-		localboard[i] = xIsNest ? 'X' : 'O';
+		localboard[i] = xIsNext ? 'X' : 'O';
 
 		setBoard(localboard);
-		setXisNext(!xIsNest);
+		setXisNext(!xIsNext);
 
 	}
 
@@ -27,11 +26,21 @@ const Game = () => {
 	}
 
 	const renderMoves = () => {
-
+		
 	}
 
 	return (
-		<Board onClick = {handleClick} squares = {board}/>
+		<>
+			<Board onClick = {handleClick} squares = {board}/>
+			<div>
+			    <p>
+			      {winner ? "Winner: " + winner : "Next Player: " + (xIsNext ? "X" : "O")}
+			    </p>
+			    <button onClick = {() => setBoard(Array(9).fill(null))}>
+			Start Game
+		</button>
+		  	</div>
+		</>
 	)
 }
 
